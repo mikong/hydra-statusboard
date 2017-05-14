@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'haml-rails'
+gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 group :development, :test do
