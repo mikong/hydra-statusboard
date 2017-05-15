@@ -1,0 +1,19 @@
+%h1 All Members
+
+= link_to 'New Member', new_member_path
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Initials
+      %th Actions
+  %tbody
+    - @members.each do |member|
+      %tr
+        %td= member.name
+        %td= member.initials
+        %td
+          = link_to 'Show', member_path(member)
+          = link_to 'Edit', edit_member_path(member)
+          = link_to 'Delete', member_path(member), method: :delete, data: { confirm: 'Are you sure?' }
