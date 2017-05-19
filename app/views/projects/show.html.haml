@@ -4,4 +4,10 @@
   %strong Status:
   = @project.status
 
+%h5 Members:
+%ul
+  - @project.members.each do |member|
+    %li
+      = link_to "#{member.name} (#{member.initials})", member
+
 = link_to 'Back', projects_path

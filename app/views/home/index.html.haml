@@ -6,6 +6,11 @@
 
 %table.table
   %tbody
-    %tr
-      %td Hydra Status Board
-      %td Web Development
+    - @projects.each do |project|
+      %tr
+        %td= project.name
+        %td= project.status
+        %td
+          - project.members.each do |member|
+            %span.badge.badge-pill.badge-default
+              = member.initials

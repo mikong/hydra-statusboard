@@ -8,4 +8,10 @@
   %strong Initials:
   = @member.initials
 
+%h5 Projects:
+%ul
+  - @member.projects.each do |project|
+    %li
+      = link_to project.name, project
+
 = link_to 'Back', members_path
