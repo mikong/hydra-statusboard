@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  layout 'admin'
+
   def index
     @projects = Project.all
   end
