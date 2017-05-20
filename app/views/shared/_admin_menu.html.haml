@@ -1,5 +1,15 @@
-%ul.nav.nav-tabs.mb-2
-  %li.nav-item{role: 'presentation'}
-    %a.nav-link{href: projects_path, class: ('active'  if controller_name == 'projects')} Projects
-  %li.nav-item{role: 'presentation'}
-    %a.nav-link{href: members_path, class: ('active'  if controller_name == 'members')} Members
+%nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.mb-2
+  %button.navbar-toggler.navbar-toggler-right{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
+    %span.navbar-toggler-icon
+  %a.navbar-brand{href: projects_path} Admin
+
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item{class: ('active'  if controller_name == 'projects')}
+        %a.nav-link{href: projects_path} Projects
+      %li.nav-item{class: ('active'  if controller_name == 'members')}
+        %a.nav-link{href: members_path} Members
+
+    %ul.navbar-nav.navbar-right
+      %li.nav-item
+        = link_to "Logout", destroy_admin_session_path, method: :delete, class: 'nav-link'
