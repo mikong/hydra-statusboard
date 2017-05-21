@@ -1,6 +1,4 @@
-class MembersController < ApplicationController
-
-  layout 'admin'
+class Admin::MembersController < AdminController
 
   def index
     @members = Member.all
@@ -22,7 +20,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to @member
+      redirect_to [:admin, @member]
     else
       render 'new'
     end
@@ -32,7 +30,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
 
     if @member.update(member_params)
-      redirect_to @member
+      redirect_to [:admin, @member]
     else
       render 'edit'
     end
@@ -42,7 +40,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     @member.destroy
 
-    redirect_to members_path
+    redirect_to admin_members_path
   end
 
 private

@@ -12,6 +12,6 @@
 %ul
   - @member.projects.each do |project|
     %li
-      = link_to project.name, project
+      = link_to project.name, [:admin, project]
 
-= link_to 'Back', members_path
+= link_to 'Back', admin_members_path

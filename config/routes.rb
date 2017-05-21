@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :projects
-  resources :members
+  namespace :admin do
+    resources :projects
+    resources :members
+  end
 end
