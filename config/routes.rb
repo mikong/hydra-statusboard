@@ -9,4 +9,7 @@ Rails.application.routes.draw do
     resources :projects
     resources :members
   end
+
+  get 'admin', to: redirect('/admin/projects')
+
 end
