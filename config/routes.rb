@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :projects
     resources :members
+    resources :groups
   end
 
   get 'admin', to: redirect('/admin/projects')

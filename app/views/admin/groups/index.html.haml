@@ -1,0 +1,20 @@
+%h2 All Groups
+
+= link_to 'New Group', new_admin_group_path
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Color
+      %th Actions
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td= group.name
+        %td
+          %span.badge{style: "background-color: ##{group.color}"}= group.color
+        %td
+          = link_to 'Show', admin_group_path(group)
+          = link_to 'Edit', edit_admin_group_path(group)
+          = link_to 'Delete', admin_group_path(group), method: :delete, data: { confirm: 'Are you sure?' }

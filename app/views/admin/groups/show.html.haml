@@ -1,0 +1,14 @@
+%h2 Group
+
+%p
+  %strong Name:
+  = @group.name
+
+%p
+  %strong Color:
+  %span.badge{style: "background-color: ##{@group.color}"}= @group.color
+
+%h5 Members:
+%ul
+
+= link_to 'Back', admin_groups_path
