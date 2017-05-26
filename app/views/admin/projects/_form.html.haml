@@ -1,13 +1,6 @@
 = form_for [:admin, @project], html: {class: 'form-horizontal'} do |f|
 
-  - if @project.errors.any?
-    #error_explanation
-      %h3
-        = pluralize(@project.errors.count, "error")
-        prohibited this project from being saved
-      %ul
-        - @project.errors.full_messages.each do |msg|
-          %li= msg
+  = render partial: 'shared/form_errors', locals: { resource: @project }
 
   .form-group
     = f.label :name, class: 'col-sm-2 control-label'
