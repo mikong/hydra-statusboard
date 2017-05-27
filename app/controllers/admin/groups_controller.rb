@@ -6,6 +6,7 @@ class Admin::GroupsController < AdminController
 
   def show
     @group = Group.find(params[:id])
+    @members = @group.members
   end
 
   def new
@@ -46,6 +47,6 @@ class Admin::GroupsController < AdminController
 private
 
   def group_params
-    params.require(:group).permit(:name, :color)
+    params.require(:group).permit(:name, :color, member_ids: [])
   end
 end

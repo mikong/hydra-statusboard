@@ -13,11 +13,17 @@
       = f.text_field :initials, class: 'form-control'
 
   .form-group
+    = f.label :group_id, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.collection_select :group_id, Group.all, :id, :name, {include_blank: 'None', prompt: true}, {class: 'custom-select'}
+
+  .form-group
     %h4 Projects
     - Project.all.each do |project|
-      %label
-        = check_box_tag "member[project_ids][]", project.id, f.object.projects.include?(project)
-        = project.name
+      .form-check
+        %label.form-check-label
+          = check_box_tag "member[project_ids][]", project.id, f.object.projects.include?(project), class: 'form-check-input'
+          = project.name
 
   .form-group
     .col-sm-offset-2.col-sm-10

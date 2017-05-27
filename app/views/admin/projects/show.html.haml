@@ -6,8 +6,8 @@
 
 %h5 Members:
 %ul
-  - @project.members.each do |member|
+  - @members.each do |member|
     %li
-      = link_to "#{member.name} (#{member.initials})", [:admin, member]
+      = link_to_member(member)
 
 = link_to 'Back', admin_projects_path

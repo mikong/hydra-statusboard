@@ -3,4 +3,6 @@ class Group < ApplicationRecord
   validates :color, format: {
     with: /\A([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/,
     message: 'is not a valid color hex' }
+
+  has_many :members
 end

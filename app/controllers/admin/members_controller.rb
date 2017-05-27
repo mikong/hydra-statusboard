@@ -45,7 +45,7 @@ class Admin::MembersController < AdminController
 
 private
   def member_params
-    params.require(:member).permit(:name, :initials, project_ids: [])
+    params.require(:member).permit(:name, :initials, :group_id, project_ids: [])
   end
 
 end

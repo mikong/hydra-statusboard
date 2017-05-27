@@ -6,6 +6,7 @@ class Admin::ProjectsController < AdminController
 
   def show
     @project = Project.find(params[:id])
+    @members = @project.members
   end
 
   def new

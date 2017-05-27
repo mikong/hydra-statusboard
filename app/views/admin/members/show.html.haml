@@ -8,6 +8,10 @@
   %strong Initials:
   = @member.initials
 
+%p
+  %strong Group:
+  = get_group(@member)
+
 %h5 Projects:
 %ul
   - @member.projects.each do |project|

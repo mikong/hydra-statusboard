@@ -15,9 +15,10 @@
   .form-group
     %h4 Members
     - Member.all.each do |member|
-      %label
-        = check_box_tag "project[member_ids][]", member.id, f.object.members.include?(member)
-        = member.name
+      .form-check
+        %label.form-check-label
+          = check_box_tag "project[member_ids][]", member.id, f.object.members.include?(member), class: 'form-check-input'
+          = member.name
 
   .form-group
     .col-sm-offset-2.col-sm-10

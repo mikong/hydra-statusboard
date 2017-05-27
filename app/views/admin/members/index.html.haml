@@ -7,12 +7,15 @@
     %tr
       %th Name
       %th Initials
+      %th Group
       %th Actions
   %tbody
     - @members.each do |member|
       %tr
         %td= member.name
-        %td= member.initials
+        %td
+          = member_badge(member)
+        %td= get_group(member)
         %td
           = link_to 'Show', admin_member_path(member)
           = link_to 'Edit', edit_admin_member_path(member)

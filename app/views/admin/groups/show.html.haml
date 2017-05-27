@@ -10,5 +10,8 @@
 
 %h5 Members:
 %ul
+  - @members.each do |member|
+    %li
+      = link_to_member(member)
 
 = link_to 'Back', admin_groups_path
