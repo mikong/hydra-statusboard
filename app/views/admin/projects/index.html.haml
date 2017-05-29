@@ -1,9 +1,10 @@
-%h2 All Projects
-
-= link_to 'New Project', new_admin_project_path
+%header.clearfix
+  .float-right
+    = link_to 'New Project', new_admin_project_path, class: 'btn btn-primary'
+  %h1.display-4 Projects
 
 %table.table
-  %thead
+  %thead.thead-default
     %tr
       %th Name
       %th Status
@@ -11,9 +12,15 @@
   %tbody
     - @projects.each do |project|
       %tr
-        %td= project.name
+        %td= link_to project.name, admin_project_path(project)
         %td= project.status
-        %td
-          = link_to 'Show', admin_project_path(project)
+        %td.actions
           = link_to 'Edit', edit_admin_project_path(project)
-          = link_to 'Delete', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Delete', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
+
+- if @projects.empty?
+  .card.text-center
+    .card-block
+      %h4.card-title No Records
+      %p.card-text= t 'no_records_text', plural: 'projects', singular: 'project'
+      = link_to 'New Project', new_admin_project_path, class: 'btn btn-primary'

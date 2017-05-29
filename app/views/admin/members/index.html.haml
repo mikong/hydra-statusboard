@@ -1,9 +1,10 @@
-%h2 All Members
-
-= link_to 'New Member', new_admin_member_path
+%header.clearfix
+  .float-right
+    = link_to 'New Member', new_admin_member_path, class: 'btn btn-primary'
+  %h1.display-4 Members
 
 %table.table
-  %thead
+  %thead.thead-default
     %tr
       %th Name
       %th Initials
@@ -12,11 +13,17 @@
   %tbody
     - @members.each do |member|
       %tr
-        %td= member.name
+        %td= link_to member.name, admin_member_path(member)
         %td
           = member_badge(member)
         %td= get_group(member)
-        %td
-          = link_to 'Show', admin_member_path(member)
+        %td.actions
           = link_to 'Edit', edit_admin_member_path(member)
-          = link_to 'Delete', admin_member_path(member), method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Delete', admin_member_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
+
+- if @members.empty?
+  .card.text-center
+    .card-block
+      %h4.card-title No Records
+      %p.card-text= t 'no_records_text', plural: 'members', singular: 'member'
+      = link_to 'New Member', new_admin_member_path, class: 'btn btn-primary'

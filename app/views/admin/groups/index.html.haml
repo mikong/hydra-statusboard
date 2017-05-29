@@ -1,9 +1,10 @@
-%h2 All Groups
-
-= link_to 'New Group', new_admin_group_path
+%header.clearfix
+  .float-right
+    = link_to 'New Group', new_admin_group_path, class: 'btn btn-primary'
+  %h1.display-4 Groups
 
 %table.table
-  %thead
+  %thead.thead-default
     %tr
       %th Name
       %th Color
@@ -11,10 +12,16 @@
   %tbody
     - @groups.each do |group|
       %tr
-        %td= group.name
+        %td= link_to group.name, admin_group_path(group)
         %td
           %span.badge{style: "background-color: ##{group.color}"}= group.color
-        %td
-          = link_to 'Show', admin_group_path(group)
+        %td.actions
           = link_to 'Edit', edit_admin_group_path(group)
-          = link_to 'Delete', admin_group_path(group), method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Delete', admin_group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
+
+- if @groups.empty?
+  .card.text-center
+    .card-block
+      %h4.card-title No Records
+      %p.card-text= t 'no_records_text', plural: 'groups', singular: 'group'
+      = link_to 'New Group', new_admin_group_path, class: 'btn btn-primary'
