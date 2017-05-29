@@ -1,17 +1,20 @@
-%h2 Group
+%header.clearfix
+  .float-right
+    = link_to 'Edit Group', edit_admin_group_path(@group), class: 'btn btn-primary'
+  %h1.display-4 Group
 
-%p
-  %strong Name:
-  = @group.name
+%dl.row
+  %dt.col-sm-1 Name
+  %dd.col-sm-11= @group.name
 
-%p
-  %strong Color:
-  %span.badge{style: "background-color: ##{@group.color}"}= @group.color
+  %dt.col-sm-1 Color
+  %dd.col-sm-11
+    %span.badge{style: "background-color: ##{@group.color}"}= @group.color
 
 %h5 Members:
-%ul
+%ul.list-unstyled
   - @members.each do |member|
     %li
       = link_to_member(member)
 
-= link_to 'Back', admin_groups_path
+= link_to 'Back to List', admin_groups_path, class: 'btn btn-secondary'

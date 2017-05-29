@@ -1,21 +1,22 @@
-%h2 Member
+%header.clearfix
+  .float-right
+    = link_to 'Edit Member', edit_admin_member_path(@member), class: 'btn btn-primary'
+  %h1.display-4 Member
 
-%p
-  %strong Name:
-  = @member.name
+%dl.row
+  %dt.col-sm-1 Name
+  %dd.col-sm-11= @member.name
 
-%p
-  %strong Initials:
-  = @member.initials
+  %dt.col-sm-1 Initials
+  %dd.col-sm-11= @member.initials
 
-%p
-  %strong Group:
-  = get_group(@member)
+  %dt.col-sm-1 Group
+  %dd.col-sm-11= get_group(@member)
 
 %h5 Projects:
-%ul
+%ul.list-unstyled
   - @member.projects.each do |project|
     %li
       = link_to project.name, [:admin, project]
 
-= link_to 'Back', admin_members_path
+= link_to 'Back to List', admin_members_path, class: 'btn btn-secondary'
