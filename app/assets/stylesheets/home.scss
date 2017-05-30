@@ -4,12 +4,56 @@
 
 body.home {
   font-family: "News Cycle";
+  color: #fff;
+  background-color: #1f2526;
 
-  h1 {
-    text-transform: uppercase;
+  header {
+    margin-top: 10px;
+
+    h6 {
+      font-size: 0.9rem;
+      color: #6F6F6E;
+    }
   }
 
-  .table {
-    text-transform: uppercase;
+  #time-display {
+    min-width: 55px;
   }
+
+  #date-display {
+    color: #C6C6C5;
+  }
+
+  hr {
+    margin-top: 0;
+    border-top: 1px dashed #C6C6C5;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    color: #6F6F6E;
+    font-weight: bold;
+  }
+
+  .table td {
+    text-transform: uppercase;
+    vertical-align: middle;
+    border-top: 2px solid #3C3C3B;
+  }
+
+  .block {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .member-circle {
+    text-align: center;
+    background: #292F30;
+    border-radius: 50%;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    margin: 4px;
+  }
+
 }

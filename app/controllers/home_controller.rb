@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @datetime = Time.now.strftime("%-I:%M %p %A, %B %d, %Y")
+    @date = Time.now.strftime("%A, %B %d, %Y")
+    @time = Time.now.strftime("%-I:%M %p")
     @projects = Project.all
   end
 end

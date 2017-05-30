@@ -20,4 +20,12 @@ module MembersHelper
     end
   end
 
+  def member_circle(member)
+    if member.group.present?
+      content_tag(:div, member.initials, class: 'member-circle', style: "background-color: ##{member.group.color}")
+    else
+      content_tag(:div, member.initials, class: 'member-circle')
+    end
+  end
+
 end

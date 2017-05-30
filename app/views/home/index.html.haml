@@ -1,16 +1,25 @@
-%header
-  #date-display
-    = @datetime
+%header.clearfix
+  .float-left
+    %h6
+      #time-display.d-inline-block= @time
+      #date-display.d-inline-block= @date
+  .float-right
+    %h6 Hydra Status Board
 
-%h1 Stuff we're working on
+%hr
+
+%h5 Stuff we're working on
 
 %table.table
   %tbody
     - @projects.each do |project|
       %tr
-        %td= project.name
-        %td= project.status
         %td
-          - project.members.each do |member|
-            %span.badge.badge-pill.badge-default
-              = member.initials
+          .h3= project.name
+        %td
+          .h3= project.status
+        %td
+          .d-flex.justify-content-end
+            - project.members.each do |member|
+              .block
+                = member_circle(member)
