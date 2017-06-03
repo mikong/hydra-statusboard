@@ -1,0 +1,13 @@
+%header.clearfix
+  .float-right
+    = link_to 'Edit Announcement', edit_admin_announcement_path(@announcement), class: 'btn btn-primary'
+  %h1.display-4 Announcement
+
+%dl.row
+  %dt.col-sm-1 Body
+  %dd.col-sm-11= @announcement.body
+
+  %dt.col-sm-1 Emoji
+  %dd.col-sm-11= @announcement.emoji
+
+= link_to 'Back to List', admin_announcements_path, class: 'btn btn-secondary'

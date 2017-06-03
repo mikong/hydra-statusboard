@@ -1,0 +1,27 @@
+%header.clearfix
+  .float-right
+    = link_to 'New Announcement', new_admin_announcement_path, class: 'btn btn-primary'
+  %h1.display-4 Announcements
+
+%table.table
+  %thead.thead-default
+    %tr
+      %th Body
+      %th Emoji
+      %th Actions
+  %tbody
+    - @announcements.each do |announcement|
+      %tr
+        %td= link_to announcement.body, admin_announcement_path(announcement)
+        %td= announcement.emoji
+        %td.actions
+          = link_to 'Edit', edit_admin_announcement_path(announcement)
+          = link_to 'Delete', admin_announcement_path(announcement), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
+
+- if @announcements.empty?
+  .card.text-center
+    .card-block
+      %h4.card-title No Records
+      %p.card-text
+        There are no announcements yet. Please create an announcement record by clicking the button below.
+      = link_to 'New Announcement', new_admin_announcement_path, class: 'btn btn-primary'

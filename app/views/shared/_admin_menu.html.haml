@@ -5,6 +5,8 @@
 
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
+      %li.nav-item{class: ('active'  if controller_name == 'announcements')}
+        %a.nav-link{href: admin_announcements_path} Announcements
       %li.nav-item{class: ('active'  if controller_name == 'projects')}
         %a.nav-link{href: admin_projects_path} Projects
       %li.nav-item{class: ('active'  if controller_name == 'members')}

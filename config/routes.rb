@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     resources :projects
     resources :members
     resources :groups
+    resources :announcements
   end
 
-  get 'admin', to: redirect('/admin/projects')
+  get 'admin', to: redirect('/admin/announcements')
 
 end
