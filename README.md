@@ -1,24 +1,25 @@
-# README
+# Hydra Status Board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Status Board for the Hydra Design Group. We're making it open-source so feel free to fork and redesign for your own organization.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby 2.3
+* Rails 5.1
+* MySQL 5.7
 
-* System dependencies
+## Setup
 
-* Configuration
+Database:
 
-* Database creation
+```
+rails db:setup
+```
 
-* Database initialization
+## Testing
 
-* How to run the test suite
+TODO
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+Released under the [MIT License](https://github.com/mikong/hydra-statusboard/blob/master/LICENSE).
