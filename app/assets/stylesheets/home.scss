@@ -24,9 +24,45 @@ body.home {
     color: #C6C6C5;
   }
 
+  hr.after-header {
+    margin-bottom: 0;
+  }
+
   hr {
     margin-top: 0;
     border-top: 1px dashed #C6C6C5;
+  }
+
+  section.announcements {
+    text-transform: uppercase;
+    white-space: nowrap;
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+
+    .ticker-line {
+      position: absolute;
+      height: 100%;
+      margin: 0;
+      text-align: center;
+      transform: translateX(0px);
+      animation: announcements 15s linear infinite;
+    }
+
+    @keyframes announcements {
+      0% {
+        transform: translateX(0px);
+      }
+    }
+
+    .ticker-train {
+      display: inline-block;
+    }
+
+    .announcement-box {
+      display: inline-block;
+      padding: 10px 25px;
+    }
   }
 
   h5 {

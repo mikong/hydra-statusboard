@@ -6,6 +6,15 @@
   .float-right
     %h6 Hydra Status Board
 
+%hr.after-header
+
+%section.announcements.clearfix
+  .ticker-line.clearfix
+    .ticker-train
+      - @announcements.each do |announcement|
+        .announcement-box
+          = announcement.body
+
 %hr
 
 %h5 Stuff we're working on
