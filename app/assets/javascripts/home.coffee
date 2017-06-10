@@ -8,6 +8,12 @@ $(document).on "turbolinks:load", ->
 
   setInterval refreshDateDisplay, 10000
 
+  $('.emoji').each (i, obj) ->
+    shortname = $(this).text()
+    emoji = emojione.shortnameToImage(shortname)
+    $(this).html emoji
+    return
+
   getKeyframe = (name) ->
     ss = document.styleSheets
     i = 0

@@ -13,7 +13,10 @@
     .ticker-train
       - @announcements.each do |announcement|
         .announcement-box
-          = announcement.body
+          .emoji.d-inline
+            = announcement.emoji
+          .announcement-text.d-inline
+            = announcement.body
 
 %hr
 
