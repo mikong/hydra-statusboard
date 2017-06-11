@@ -6,8 +6,6 @@
   .float-right
     %h6 Hydra Status Board
 
-%hr.after-header
-
 %section.announcements.clearfix
   .ticker-line.clearfix
     .ticker-train
@@ -18,20 +16,20 @@
           .announcement-text.d-inline
             = announcement.body
 
-%hr
+%section.projects
 
-%h5 Stuff we're working on
+  %h5 Stuff we're working on
 
-%table.table
-  %tbody
-    - @projects.each do |project|
-      %tr
-        %td
-          .h3= project.name
-        %td
-          .h3= project.status
-        %td
-          .d-flex.justify-content-end
-            - project.members.each do |member|
-              .block
-                = member_circle(member)
+  %table.table
+    %tbody
+      - @projects.each do |project|
+        %tr
+          %td
+            .h3= project.name
+          %td
+            .h3= project.status
+          %td
+            .d-flex.justify-content-end
+              - project.members.each do |member|
+                .block
+                  = member_circle(member)
