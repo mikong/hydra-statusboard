@@ -10,7 +10,7 @@
   .form-group
     = f.label :emoji, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :emoji, class: 'form-control'
+      = f.select :emoji, [f.object.emoji], {}, { style: 'width: 50%' }
 
   .form-group
     .col-sm-offset-2.col-sm-10

@@ -6,7 +6,9 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.admin
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js'
+    = stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css'
+  %body.admin{class: controller_name}
     .container
       = render 'shared/admin_menu'
       = yield
