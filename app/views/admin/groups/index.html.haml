@@ -8,6 +8,7 @@
     %tr
       %th Name
       %th Color
+      %th Initials
       %th Actions
   %tbody
     - @groups.each do |group|
@@ -15,6 +16,7 @@
         %td= link_to group.name, admin_group_path(group)
         %td
           %span.badge{style: "background-color: ##{group.color}"}= group.color
+        %td= group.initials
         %td.actions
           = link_to 'Edit', edit_admin_group_path(group)
           = link_to 'Delete', admin_group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'

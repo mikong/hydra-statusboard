@@ -21,6 +21,14 @@
           = member.name
 
   .form-group
+    %h4 Groups
+    - Group.all.each do |group|
+      .form-check
+        %label.form-check-label
+          = check_box_tag "project[group_ids][]", group.id, f.object.groups.include?(group), class: 'form-check-input'
+          = group.name
+
+  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: 'btn btn-primary'
       = link_to 'Back to List', admin_projects_path, class: 'btn btn-secondary'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603075043) do
+ActiveRecord::Schema.define(version: 20170619085038) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -42,11 +42,21 @@ ActiveRecord::Schema.define(version: 20170603075043) do
     t.index ["project_id"], name: "index_assignments_on_project_id"
   end
 
+  create_table "group_assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "project_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_assignments_on_group_id"
+    t.index ["project_id"], name: "index_group_assignments_on_project_id"
+  end
+
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "initials"
   end
 
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -67,5 +77,7 @@ ActiveRecord::Schema.define(version: 20170603075043) do
 
   add_foreign_key "assignments", "members"
   add_foreign_key "assignments", "projects"
+  add_foreign_key "group_assignments", "groups"
+  add_foreign_key "group_assignments", "projects"
   add_foreign_key "members", "groups"
 end

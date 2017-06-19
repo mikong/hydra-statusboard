@@ -16,4 +16,10 @@
     %li
       = link_to_member(member)
 
+%h5 Groups:
+%ul.list-unstyled
+  - @groups.each do |group|
+    %li
+      = link_to "#{group.name} (#{group.initials})", [:admin, group]
+
 = link_to 'Back to List', admin_projects_path, class: 'btn btn-secondary'

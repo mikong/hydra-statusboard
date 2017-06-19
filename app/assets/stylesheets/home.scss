@@ -106,6 +106,16 @@ body.home {
     display: inline-block;
   }
 
+  .group-square {
+    text-align: center;
+    background: #292F30;
+    border-radius: 10%;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    margin: 4px;  
+  }
+
   .member-circle {
     text-align: center;
     background: #292F30;
