@@ -98,7 +98,8 @@ body.home {
   .table td {
     text-transform: uppercase;
     vertical-align: middle;
-    border-top: 2px solid #3C3C3B;
+    border-top: none;
+    border-bottom: 2px solid #3C3C3B;
   }
 
   .block {
