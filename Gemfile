@@ -32,6 +32,10 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 gem 'devise'
 
 group :development, :test do
