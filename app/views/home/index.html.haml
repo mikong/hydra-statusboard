@@ -4,7 +4,7 @@
       #time-display.d-inline-block= @time
       #date-display.d-inline-block= @date
   .float-right
-    %h6 Hydra Status Board
+    %h6= t '.title'
 
 %section.announcements.clearfix
   .ticker-line.clearfix
@@ -15,10 +15,14 @@
             = announcement.emoji
           .announcement-text.d-inline
             = announcement.body
+      - if @announcements.empty?
+        .announcement-box
+          .emoji.d-inline= ":octopus:"
+          .announcement-text.d-inline= t 'hello'
 
 %section.projects
 
-  %h5 Stuff we're working on
+  %h5= t '.projects'
 
   %table.table
     %tbody
@@ -37,3 +41,7 @@
               - project.members.each do |member|
                 .block
                   = member_circle(member)
+      - if @projects.empty?
+        %tr
+          %td
+            .h3= t '.no_projects'

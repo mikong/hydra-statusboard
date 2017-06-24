@@ -30,6 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hey Hydra"
+
+  home:
+    index:
+      title: Hydra Status Board
+      projects: Stuff we're working on
+      no_projects: No Projects to Show
 
   no_records_text: "There are no %{plural} yet. Please create a %{singular} record by clicking the button below."
