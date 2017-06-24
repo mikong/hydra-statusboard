@@ -102,6 +102,15 @@ body.home {
     border-bottom: 2px solid #3C3C3B;
   }
 
+  .td-min-pad {
+    height: 1px;
+    padding: 10px 0px 5px 0px;
+  }
+
+  td .indicator {
+    border-left: 6px solid;
+  }
+
   .block {
     vertical-align: middle;
     display: inline-block;

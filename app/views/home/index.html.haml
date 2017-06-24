@@ -28,6 +28,8 @@
     %tbody
       - @projects.each do |project|
         %tr
+          %td.td-min-pad
+            .indicator.d-inline-block.h-100{style: "border-color: #{project.color_indicator}"}
           %td
             .h3= project.name
           %td
