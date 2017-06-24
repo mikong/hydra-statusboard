@@ -13,6 +13,17 @@
       = f.text_field :status, class: 'form-control'
 
   .form-group
+    = f.label :color_indicator, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.color_field :color_indicator, class: 'form-control'
+      %small.form-text.text-muted
+        Suggestions:
+        %button.btn.btn-sm.btn-link.indicator-suggest.default-indicator{ type: 'button', data: { suggest: "#{Project::DEFAULT_COLOR_INDICATOR}" } }
+          Default
+        %button.btn.btn-sm.btn-link.indicator-suggest.tasteless{ type: 'button', data: { suggest: "#{Project::TASTELESS_COLOR_INDICATOR}" } }
+          Tasteless
+
+  .form-group
     %h4 Members
     - Member.all.each do |member|
       .form-check

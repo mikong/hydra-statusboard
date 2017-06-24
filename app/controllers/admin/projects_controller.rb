@@ -49,7 +49,7 @@ private
   def project_params
     params[:project][:member_ids] ||= []
     params[:project][:group_ids] ||= []
-    params.require(:project).permit(:name, :status, member_ids: [], group_ids: [])
+    params.require(:project).permit(:name, :status, :color_indicator, member_ids: [], group_ids: [])
   end
 
 end

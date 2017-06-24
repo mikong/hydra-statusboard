@@ -4,11 +4,15 @@
   %h1.display-4 Project: #{@project.name}
 
 %dl.row
-  %dt.col-sm-1 Name
-  %dd.col-sm-11= @project.name
+  %dt.col-sm-2 Name
+  %dd.col-sm-10= @project.name
 
-  %dt.col-sm-1 Status
-  %dd.col-sm-11= @project.status
+  %dt.col-sm-2 Status
+  %dd.col-sm-10= @project.status
+
+  %dt.col-sm-2 Color Indicator
+  %dd.col-sm-10
+    %span.badge.color-indicator{style: "background-color: #{@project.color_indicator}"}= @project.color_indicator
 
 %h5 Members:
 %ul.list-unstyled

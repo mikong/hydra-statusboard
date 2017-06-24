@@ -8,12 +8,15 @@
     %tr
       %th Name
       %th Status
+      %th Indicator
       %th Actions
   %tbody
     - @projects.each do |project|
       %tr
         %td= link_to project.name, admin_project_path(project)
         %td= project.status
+        %td
+          %span.badge.color-indicator{style: "background-color: #{project.color_indicator}"}= project.color_indicator
         %td.actions
           = link_to 'Edit', edit_admin_project_path(project)
           = link_to 'Delete', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
