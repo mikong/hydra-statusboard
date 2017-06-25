@@ -15,7 +15,7 @@
       %tr
         %td= link_to group.name, admin_group_path(group)
         %td
-          %span.badge{style: "background-color: ##{group.color}"}= group.color
+          %span.badge.color-hex{style: "background-color: #{group.color}"}= group.color
         %td= group.initials
         %td.actions
           = link_to 'Edit', edit_admin_group_path(group)

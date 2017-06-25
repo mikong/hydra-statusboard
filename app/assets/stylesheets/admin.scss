@@ -8,4 +8,12 @@ body.admin {
     margin-right: 4px;
   }
 
+  .form-control[type="color"] {
+    height: 38px;
+  }
+
+  .badge.color-hex {
+    text-transform: uppercase;
+  }
+
 }

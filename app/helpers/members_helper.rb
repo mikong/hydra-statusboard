@@ -14,7 +14,7 @@ module MembersHelper
 
   def member_badge(member)
     if member.group.present?
-      content_tag(:span, member.initials, class: 'badge', style: "background-color: ##{member.group.color}")
+      content_tag(:span, member.initials, class: 'badge', style: "background-color: #{member.group.color}")
     else
       content_tag(:span, member.initials, class: 'badge badge-default')
     end
@@ -22,7 +22,7 @@ module MembersHelper
 
   def member_circle(member)
     if member.group.present?
-      content_tag(:div, member.initials, class: 'member-circle', style: "background-color: ##{member.group.color}")
+      content_tag(:div, member.initials, class: 'member-circle', style: "background-color: #{member.group.color}")
     else
       content_tag(:div, member.initials, class: 'member-circle')
     end

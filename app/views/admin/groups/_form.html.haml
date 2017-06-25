@@ -9,9 +9,8 @@
 
   .form-group
     = f.label :color, class: 'col-sm-2 control-label'
-    .input-group.col-sm-10
-      .input-group-addon #
-      = f.text_field :color, class: 'form-control'
+    .col-sm-10
+      = f.color_field :color, class: 'form-control'
 
   .form-group
     = f.label :initials, class: 'col-sm-2 control-label'

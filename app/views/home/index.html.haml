@@ -38,7 +38,7 @@
             .d-flex.justify-content-end
               - project.groups.each do |group|
                 .block.group
-                  .group-square{style: "background-color: ##{group.color}"}
+                  .group-square{style: "background-color: #{group.color}"}
                     = group.initials
               - project.members.each do |member|
                 .block
