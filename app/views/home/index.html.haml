@@ -19,6 +19,13 @@
         .announcement-box
           .emoji.d-inline= ":octopus:"
           .announcement-text.d-inline= t 'hello'
+%aside.about-emoji.clearfix
+  .float-right
+    %small.attribution.text-muted
+      %cite
+        = link_to 'EmojiOne', 'https://www.emojione.com/', target: '_blank', class: 'text-muted'
+      is licensed under
+      = link_to 'CC-BY 4.0', 'https://creativecommons.org/licenses/by/4.0/legalcode', target: '_blank', class: 'text-muted'
 
 %section.projects
 
