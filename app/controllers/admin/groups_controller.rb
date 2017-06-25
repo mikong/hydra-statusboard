@@ -1,7 +1,7 @@
 class Admin::GroupsController < AdminController
 
   def index
-    @groups = Group.all
+    @groups = Group.order(:name).page params[:page]
   end
 
   def show

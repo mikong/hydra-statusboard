@@ -18,6 +18,8 @@
           = link_to 'Edit', edit_admin_announcement_path(announcement)
           = link_to 'Delete', admin_announcement_path(announcement), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
 
+= paginate @announcements
+
 - if @announcements.empty?
   .card.text-center
     .card-block
