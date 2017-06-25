@@ -1,7 +1,7 @@
 class Admin::MembersController < AdminController
 
   def index
-    @members = Member.all
+    @members = Member.order(:name).page params[:page]
   end
 
   def show

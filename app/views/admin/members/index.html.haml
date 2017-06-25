@@ -21,6 +21,8 @@
           = link_to 'Edit', edit_admin_member_path(member)
           = link_to 'Delete', admin_member_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'
 
+= paginate @members
+
 - if @members.empty?
   .card.text-center
     .card-block
