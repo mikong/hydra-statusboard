@@ -31,26 +31,36 @@
 
   %h5= t '.projects'
 
-  %table.table
-    %tbody
-      - @projects.each do |project|
-        %tr
-          %td.td-min-pad
-            .indicator.d-inline-block.h-100{style: "border-color: #{project.color_indicator}"}
-          %td
-            .h3= project.name
-          %td
-            .h3= project.status
-          %td
-            .d-flex.justify-content-end
-              - project.groups.each do |group|
-                .block.group
-                  .group-square{style: "background-color: #{group.color}"}
-                    = group.initials
-              - project.members.each do |member|
-                .block
-                  = member_circle(member)
-      - if @projects.empty?
+  #projectsCarousel.carousel
+    .carousel-inner{role: 'listbox'}
+
+      - @projects.each_slice(7).with_index do |batch, i|
+
+        .carousel-item{ class: ("active"  if i == 0)}
+
+          %table.table
+            %tbody
+              - batch.each do |project|
+                %tr
+                  %td.td-min-pad
+                    .indicator.d-inline-block.h-100{style: "border-color: #{project.color_indicator}"}
+                  %td
+                    .h3= project.name
+                  %td
+                    .h3= project.status
+                  %td
+                    .d-flex.justify-content-end
+                      - project.groups.each do |group|
+                        .block.group
+                          .group-square{style: "background-color: #{group.color}"}
+                            = group.initials
+                      - project.members.each do |member|
+                        .block
+                          = member_circle(member)
+
+  - if @projects.empty?
+    %table.table
+      %tbody
         %tr
           %td
             .h3= t '.no_projects'

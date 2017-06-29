@@ -8,6 +8,8 @@ $(document).on "turbolinks:load", ->
 
   setInterval refreshDateDisplay, 10000
 
+  # Emoji
+
   $('.emoji').each (i, obj) ->
     shortname = $(this).text()
     emoji = emojione.shortnameToImage(shortname)
@@ -47,3 +49,7 @@ $(document).on "turbolinks:load", ->
 
   tickerKeyframe = getKeyframe('announcements')
   tickerKeyframe.appendRule "100% { transform: translateX(" + endPos + "px); }"
+
+  # Carousel
+
+  $('.carousel').carousel()
