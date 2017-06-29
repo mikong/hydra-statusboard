@@ -34,7 +34,7 @@
   #projectsCarousel.carousel
     .carousel-inner{role: 'listbox'}
 
-      - @projects.each_slice(7).with_index do |batch, i|
+      - @projects.each_slice(HomeHelper::ITEMS_PER_SLIDE).with_index do |batch, i|
 
         .carousel-item{ class: ("active"  if i == 0)}
 
