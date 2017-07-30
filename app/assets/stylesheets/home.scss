@@ -2,21 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
-  height: 100%;
-}
-
 body.home {
   font-family: "News Cycle";
   color: #fff;
   background-color: #1f2526;
-  height: 100%;
-
-  .container {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
   header {
     margin-top: 10px;
@@ -78,14 +67,6 @@ body.home {
       }
     }
 
-  }
-
-  section.projects {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   h5 {
